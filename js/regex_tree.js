@@ -1,14 +1,16 @@
 //Starting our regex_tree module which will instantiate a tree
 //that will contain all the subparts of the regex	
 	
-	var Regex_Tree = function(){}
+	var Regex_Tree = function(){
+		this._parent 		= null
+		this._children		= []
+		this._nodetype		= ''
+		this._minRepetition	= 0
+		this._maxRepetition	= 1
+	}
 	
 	Regex_Tree.prototype = (function(){
-		var _parent 		= null
-		var _children		= []
-		var _nodetype		= ''
-		var _minRepetition	= 0
-		var _maxRepetition	= 1
+		
 	
 		var setMinRepetitions = function(repetitions){
 			_minRepetition = repetitions
