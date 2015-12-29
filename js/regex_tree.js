@@ -44,7 +44,7 @@ var _ = require('lodash')
 		}
 		
 		var getParent	= function(){
-			return _parent
+			return this._parent
 		}
 		
 		var addChild	= function(child){
@@ -53,6 +53,10 @@ var _ = require('lodash')
 		
 		var getChildren	= function(){
 			return this._children
+		}
+		
+		var getNodeType	= function(){
+			return this._nodetype
 		}
 		
 		var isNodeTerminal	= function(){
@@ -112,9 +116,10 @@ var _ = require('lodash')
 			getMaxRepetitions	: getMaxRepetitions,
 			setParent			: setParent,
 			getParent			: getParent,
+			getNodeType			: getNodeType,
 			addChild			: addChild,
 			getChildren			: getChildren,
-			isNodeTerminal		: isNodeTerminal,
+			isTerminal			: isNodeTerminal,
 			setNodeTerminal		: setNodeTerminal,
 			createRegexTree		: createRegexTree,
 			test				: test
