@@ -1,0 +1,39 @@
+{
+  "name": "Power_regex",
+  "version": "0.0.0",
+  "description": "Module for generating all strings represented by a regular expression.",
+  "main": "power_regex.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "jasmine-node": "^1.14.5",
+    "karma": "^0.13.16",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "lodash": "^3.10.1",
+    "protractor": "^3.0.0",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lnyaki/power_regex"
+  },
+  "keywords": [
+    "regular",
+    "expression",
+    "generation"
+  ],
+  "author": "= <=>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lnyaki/power_regex/issues"
+  },
+  "homepage": "https://github.com/lnyaki/power_regex"
+}

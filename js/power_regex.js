@@ -11,3 +11,4 @@ var max = 5;
 tree.setMinRepetitions(min)
 tree.setMaxRepetitions(max)
 console.log('Min : '+tree.getMinRepetitions()+'  Max : '+tree.getMaxRepetitions())
+
