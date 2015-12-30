@@ -1,4 +1,5 @@
-var _ = require('lodash')
+var _ 		= require('lodash')
+var symbols	= require('./symbols')
 
 //Starting our regex_tree module which will instantiate a tree
 //that will contain all the subparts of the regex	
@@ -97,16 +98,60 @@ var _ = require('lodash')
 			}
 		}
 		
+		/* Insert a node B as parent of the current node N.
+		 * The previous parent of N, called A, becomes the parent
+		 * of node B.
+		 * Initial situation : N <-- A
+		 * Final situation : N <-- B <-- A  (B has been inserted)
+		 */
+		var insertNewParent	= function(newParent){
+			//save the current parent
+			var oldParent = this._parent
+			
+			newParent.setParent(oldParent)
+			this._parent = newParent
+		}
+		
 	/* 
 	 * Take a string regex as input and returns a tree representing that
 	 * regex.
 	 *
 	 */
+		
 		var createRegexTree		= function(regex){
 		
+			var size 		= regex.length
+			var currentChar	= ''
+			var currentWord	= ''
+			//Read through the whole regex
+			for(var i = 0; i<size; i++){
+				currentChar	= regex[i]
+				
+				if(symbols.isSymbol(currentChar)){
+					currentWord += currentChar
+				}
+				else if(symbols.isNewGroup(currentChar)){
+					
+				}
+				else if(symbols.isNewOr(currentChar)){
+						
+				}
+				
+				else if(symbols.isDash(currentChar)){
+				
+				}
+				
+				else if(symbols.isPipe(currentChar)){
+				
+				}
+				
+				else if(symbols.isNewCardinality(currentChar)){
+				
+				}
+			}
 		}
 		
-		
+	
 		
 		return{
 			setMinRepetitions 	: setMinRepetitions,
@@ -122,6 +167,7 @@ var _ = require('lodash')
 			isTerminal			: isNodeTerminal,
 			setNodeTerminal		: setNodeTerminal,
 			createRegexTree		: createRegexTree,
+			insertNewParent		: insertNewParent,
 			test				: test
 		}
 	})()

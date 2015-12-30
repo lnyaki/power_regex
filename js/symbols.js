@@ -84,15 +84,62 @@ module.exports	= function(){
 			'*'	: CARDINAL,
 			'+'	: CARDINAL
 	}
+	
+	var isSymbol			= function(char){
+		var symbol	= this.getSymbol(char)
+		
+		if(symbol === '' || symbol === undefined){
+			throw "Undefined symbol "+char
+		}
+		else if(symbol === SYM){
+			return true
+		}
+		else{
+			return false
+		}
+	}
+	
+	var isNewGroup			= function(char){
+		return char === '('
+	}
+	
+	var isNewOr				= function(char){
+		return char === '['
+	}
+	
+	var isDash				= function(char){
+		return char === '-'
+	}
+	
+	var isPipe				= function(char){
+		return char === '|'
+	}
+	
+	var isNewCardinality	= function(char){
+		if(char === '?' || char === '*' || char === '+' || char === '{'){
+			return true
+		}
+		else{
+			return false
+		}
+	}
+	
 		
 	return {
-		SYMBOLS	: SYMBOLS,
-		SYM		: SYM,
-		PIPE	: PIPE,
-		BRACKET	: BRACKET,
-		CURLY	: CURLY,
-		PAR		: PAR,
-		CARDINAL: CARDINAL,
-		ESCAPE	: ESCAPE
+		SYMBOLS				: SYMBOLS,
+		SYM					: SYM,
+		PIPE				: PIPE,
+		BRACKET				: BRACKET,
+		CURLY				: CURLY,
+		PAR					: PAR,
+		CARDINAL			: CARDINAL,
+		ESCAPE				: ESCAPE,
+		isSymbol			: isSymbol,
+		isNewGroup			: isNewGroup,
+		isNewOr				: isNewOr,
+		isDash				: isDash,
+		isPipe				: isPipe,
+		isNewCardinality	: isNewCardinality
 	}
 }()
+
