@@ -86,7 +86,7 @@ module.exports	= function(){
 	}
 	
 	var isSymbol			= function(char){
-		var symbol	= this.getSymbol(char)
+		var symbol	= this.getSymbolType(char)
 		
 		if(symbol === '' || symbol === undefined){
 			throw "Undefined symbol "+char
@@ -124,6 +124,10 @@ module.exports	= function(){
 		}
 	}
 	
+	var getSymbolType		= function(symbol){
+		return this.SYMBOLS[symbol]
+	}
+	
 		
 	return {
 		SYMBOLS				: SYMBOLS,
@@ -139,7 +143,8 @@ module.exports	= function(){
 		isNewOr				: isNewOr,
 		isDash				: isDash,
 		isPipe				: isPipe,
-		isNewCardinality	: isNewCardinality
+		isNewCardinality	: isNewCardinality,
+		getSymbolType		: getSymbolType
 	}
 }()
 
